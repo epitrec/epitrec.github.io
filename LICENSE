@@ -1,0 +1,35 @@
+EPITREC — Licence d'utilisation gratuite
+Copyright (c) 2026 Jeremy Lucas. Tous droits réservés.
+
+EPITREC est un logiciel propriétaire distribué gratuitement. Son code source n'est pas publié.
+
+1. Droit d'utilisation
+   Toute personne, association ou club peut, gratuitement et sans limite de durée, installer et utiliser
+   EPITREC pour organiser des compétitions, y compris dans un cadre fédéral ou commercial.
+
+2. Redistribution
+   Le logiciel peut être redistribué gratuitement, sous sa forme d'origine et accompagné du présent
+   fichier ainsi que du fichier THIRD-PARTY-NOTICES.md. Toute vente, location ou facturation du logiciel
+   lui-même est interdite.
+
+3. Restrictions
+   Sauf autorisation écrite de l'auteur, il est interdit de modifier, décompiler, désassembler ou
+   procéder à l'ingénierie inverse du logiciel, dans les limites permises par la loi applicable, ainsi
+   que de retirer ou de modifier les mentions de droits d'auteur qu'il contient.
+
+4. Composants tiers
+   EPITREC intègre des composants tiers distribués sous leurs propres licences (MIT, Apache 2.0,
+   BSD-3-Clause, MS-PL, licence Community de QuestPDF…). Ces licences, recensées dans
+   THIRD-PARTY-NOTICES.md, s'appliquent à ces composants et ne sont pas modifiées par la présente.
+
+5. Données
+   Les fichiers de concours (.epitrec), les exports et les données qu'ils contiennent appartiennent à
+   leurs utilisateurs. EPITREC fonctionne entièrement hors ligne et ne transmet aucune donnée ; seuls
+   les fonds de carte et l'altimétrie, lorsqu'ils sont utilisés, sont téléchargés depuis les services
+   cartographiques publics (IGN Géoplateforme, OpenStreetMap, OpenTopoMap).
+
+6. Absence de garantie
+   Le logiciel est fourni « tel quel », sans garantie d'aucune sorte, expresse ou implicite, notamment
+   d'adéquation à un usage particulier. Les résultats calculés doivent être vérifiés par le jury de la
+   compétition, seul responsable des classements officiels. En aucun cas l'auteur ne pourra être tenu
+   responsable d'un dommage résultant de l'utilisation du logiciel.
