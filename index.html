@@ -324,7 +324,7 @@
           </a>
           <a class="btn btn-ghost" href="#fonctions">Découvrir les fonctions</a>
         </div>
-        <p class="cta-note" id="hero-dl-note">Version 1.1.1 — gratuit, sans compte ni inscription.</p>
+        <p class="cta-note" id="hero-dl-note">Version 1.2.0 — gratuit, sans compte ni inscription.</p>
       </div>
 
       <div class="window hero-shot">
@@ -377,7 +377,7 @@
             <li>Fonds <strong>IGN</strong> (plan et photo aérienne), OpenStreetMap ou OpenTopoMap.</li>
             <li>Points de contrôle <strong>aimantés et numérotés</strong> tout seuls, annuler / rétablir illimité.</li>
             <li>Distances géodésiques réelles, temps idéaux, heures de passage et <strong>dénivelé</strong>.</li>
-            <li><strong>Carte hors-ligne</strong> téléchargée la veille, zones à éviter, import/export GPX et GeoJSON.</li>
+            <li><strong>Carte hors-ligne</strong> IGN téléchargée la veille, zones à éviter, import/export GPX et GeoJSON.</li>
             <li>Carte concurrent en <strong>PDF à l’échelle exacte</strong> (1:25&nbsp;000…), prête à photocopier.</li>
           </ul>
         </div>
@@ -591,7 +591,7 @@
         </details>
         <details>
           <summary>Faut-il une connexion Internet le jour du concours&nbsp;?</summary>
-          <p>Non. Epitrec fonctionne entièrement hors-ligne. Une connexion ponctuelle sert seulement, pendant la préparation, à afficher les cartes en ligne et à télécharger la carte hors-ligne de votre zone.</p>
+          <p>Non. Epitrec fonctionne entièrement hors-ligne. Une connexion ponctuelle sert seulement, pendant la préparation, à afficher les cartes en ligne et à télécharger la carte hors-ligne IGN de votre zone.</p>
         </details>
         <details>
           <summary>Comment sauvegarder ou transférer un concours sur un autre PC&nbsp;?</summary>
@@ -675,10 +675,10 @@
       if (os === 'mac') {
         // Le navigateur ne distingue pas un Mac Apple Silicon d'un Mac Intel : le visiteur choisit dans la carte.
         link.href = '#dl-mac';
-        note.innerHTML = 'Version 1.1.1 — gratuit, sans compte ni inscription · Apple Silicon ou Intel, au choix ci-dessous';
+        note.innerHTML = 'Version 1.2.0 — gratuit, sans compte ni inscription · Apple Silicon ou Intel, au choix ci-dessous';
       } else {
         link.href = card.querySelector('.btn').href;
-        note.innerHTML = 'Version 1.1.1 — gratuit, sans compte ni inscription · <a href="#telecharger">autres systèmes</a>';
+        note.innerHTML = 'Version 1.2.0 — gratuit, sans compte ni inscription · <a href="#telecharger">autres systèmes</a>';
       }
     }
   })();
