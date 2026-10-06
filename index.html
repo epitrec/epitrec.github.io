@@ -34,6 +34,7 @@
   "inLanguage": "fr",
   "isAccessibleForFree": true,
   "offers": { "@type": "Offer", "price": 0, "priceCurrency": "EUR" },
+  "softwareVersion": "2027.1.0",
   "downloadUrl": "https://epitrec.github.io/#telecharger"
 }
 </script>
@@ -245,6 +246,8 @@
   .steps strong { color: var(--text); }
   code { font: .88em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--bg-soft); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; color: var(--ink); }
   .dl-foot { text-align: center; margin-top: 26px; color: var(--muted); font-size: .92rem; }
+  .dl-millesime { display: flex; flex-wrap: wrap; gap: 8px 14px; justify-content: center; align-items: center; font-size: .92rem; color: var(--muted); }
+  .dl-millesime .pill strong { color: var(--ink); }
   @media (max-width: 980px) { .dl-grid { grid-template-columns: 1fr; max-width: 600px; } }
 
   /* FAQ */
@@ -324,7 +327,7 @@
           </a>
           <a class="btn btn-ghost" href="#fonctions">Découvrir les fonctions</a>
         </div>
-        <p class="cta-note" id="hero-dl-note">Version 1.4.0 — gratuit, sans compte ni inscription.</p>
+        <p class="cta-note" id="hero-dl-note">Version 2027.1.0 (règlement TREC 2027) — gratuit, sans compte ni inscription.</p>
       </div>
 
       <div class="window hero-shot">
@@ -513,6 +516,11 @@
         <span class="eyebrow">Télécharger</span>
         <h2 id="dl-title">Prêt en deux minutes</h2>
         <p class="lead">Aucune installation de .NET ni de base de données&nbsp;: décompressez, lancez, c’est tout. Il vous faut simplement un ordinateur sous Windows, macOS ou Linux.</p>
+        <!-- Le numéro de version commence par le millésime du règlement embarqué : 2027.x = règlement TREC 2027. -->
+        <p class="dl-millesime">
+          <span class="pill"><span class="dot"></span>Version&nbsp;<strong>2027.1.0</strong>&nbsp;· règlement TREC&nbsp;<strong>2027</strong></span>
+          <span>en vigueur depuis le 1<sup>er</sup>&nbsp;septembre&nbsp;2026</span>
+        </p>
       </div>
       <div class="dl-grid">
         <article class="dl-card" id="dl-windows">
@@ -603,7 +611,7 @@
         </details>
         <details>
           <summary>Que se passe-t-il quand le règlement change&nbsp;?</summary>
-          <p>Les barèmes officiels sont livrés dans un référentiel réglementaire. À la création d’un concours, ce référentiel est figé dans son fichier&nbsp;: un concours passé calcule toujours avec les règles de son année. Pour un nouveau millésime, une mise à jour du référentiel suffit.</p>
+          <p>Les barèmes officiels sont livrés dans un référentiel réglementaire, et le numéro de version d’Epitrec commence par son millésime&nbsp;: la version 2027.1.0 applique le règlement TREC 2027, en vigueur depuis le 1<sup>er</sup>&nbsp;septembre 2026. À la création d’un concours, ce référentiel est figé dans son fichier&nbsp;: un concours passé calcule toujours avec les règles de sa saison. Chaque nouveau règlement arrive avec une nouvelle version (2028.1.0 pour le règlement 2028)&nbsp;; si vous ouvrez un concours de la nouvelle saison créé avec l’ancien référentiel, Epitrec vous propose de le mettre à jour.</p>
         </details>
         <details>
           <summary>Une question, un problème ou une idée&nbsp;: où écrire&nbsp;?</summary>
@@ -672,6 +680,8 @@
     var ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '';
     var os = /win/i.test(ua) ? 'windows' : /linux|x11/i.test(ua) && !/android/i.test(navigator.userAgent) ? 'linux' : /mac/i.test(ua) ? 'mac' : null;
     var label = document.getElementById('hero-dl-label'), note = document.getElementById('hero-dl-note'), link = document.getElementById('hero-dl');
+    // La version n'est écrite qu'une fois, dans la note statique : on la complète sans la recopier.
+    var base = note.textContent.trim().replace(/\.$/, '');
     if (os) {
       var card = document.getElementById('dl-' + os);
       card.classList.add('is-current');
@@ -679,10 +689,14 @@
       if (os === 'mac') {
         // Le navigateur ne distingue pas un Mac Apple Silicon d'un Mac Intel : le visiteur choisit dans la carte.
         link.href = '#dl-mac';
-        note.innerHTML = 'Version 1.4.0 — gratuit, sans compte ni inscription · Apple Silicon ou Intel, au choix ci-dessous';
+        note.textContent = base + ' · Apple Silicon ou Intel, au choix ci-dessous';
       } else {
         link.href = card.querySelector('.btn').href;
-        note.innerHTML = 'Version 1.4.0 — gratuit, sans compte ni inscription · <a href="#telecharger">autres systèmes</a>';
+        note.textContent = base + ' · ';
+        var autres = document.createElement('a');
+        autres.href = '#telecharger';
+        autres.textContent = 'autres systèmes';
+        note.appendChild(autres);
       }
     }
   })();
